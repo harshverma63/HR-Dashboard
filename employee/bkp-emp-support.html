@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Support</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 logo-v-center">
+                    <div class="logo">
+                        EMP <span>Dash</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 nav-V-center">
+                    <div class="top-nav">
+                        <ul>
+                            <li class="nav-item"><a href="emp-dashboard.html">Home</a></li>
+                            <!-- <li class="nav-item"><a href="emp-profile.html">Profile</a></li> -->
+                            <li class="nav-item"><a href="emp-finance.html">Finance</a></li>
+                            <li class="nav-item"><a href="emp-leaves.html">Leaves</a></li>
+                            <li class="nav-item"><a href="emp-a&a.html">Achievements & Awards</a></li>
+                            <li class="nav-item"><a href="emp-support.html">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="profile-btn">
+                        <div class="dropdown">
+
+                            <a class="btn btn-secondary dropdown-toggle" id="drp-btn"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <span id="profile-btn-name"></span>
+                              <span id="profile-btn-img-span"><img id="profile-btn-img" src="" alt=""></span>
+                            </a>
+                          
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item " href="emp-profile.html">Profile</a></li>
+                              <!-- <li><a class="dropdown-item" href="#">Change Password</a></li> -->
+                              <li><button class="dropdown-item" id="logOut" onclick="logOut()">Log Out</button></li>
+                            </ul>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="emp-support" class="sec1">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="financeoptions">
+                        
+                        <div class="financebox scaleHVR" id="salary">
+                            <img src="images/hrticket.png" alt="">
+                            <h5>New HR Ticket</h5>
+                        </div>
+
+                        <div class="financebox scaleHVR" id="bonus">
+                            <img src="images/ptickets.png" alt="">
+                            <h5>Pending Tickets</h5>
+                        </div>
+
+                        <div class="financebox scaleHVR" id="expense">
+                            <img src="images/resolved.png" alt="">
+                            <h5>Resolved Tickets</h5>
+                        </div>
+
+                        <div class="financebox scaleHVR" id="tax">
+                            <img src="images/escalation.png" alt="">
+                            <h5>Escalate Ticket</h5>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="finance-Salary2">
+        <div class="container ">
+            <div class="row">
+
+                <div class="col-lg-6 offset-lg-3  box-container">
+                    <div class="finance-v-box">
+                        
+                        <div class="hrTicket-container">
+                            <form id="HrTicketForm">
+                                <label>Add Ticket Subject
+                                    <input type="text" name="hrTicket" id="hrTicketSubject">
+                                </label>
+                                <label>Add Ticket Description
+                                    <textarea name="hrTicket" id="hrTicketDescription"></textarea>
+                                </label>
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="finance-Bonuses" class="support-pending">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <h6 class="head6">Last Three Tickets</h6>
+
+                    <div class="finance-v-box">
+                        
+                        <div class="financebox m-t-0" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Pay Slips are not...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Unable to OPT the...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Salary is not credited...<br> <span></span></p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <h6 class="head6">Past 6 Months</h6>
+
+                    <div class="finance-v-box">
+                        
+                        <div class="financebox m-t-0" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket One...<br> <span></span></p>
+                        </div>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Two...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Three...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Four...<br> <span></span></p>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+    <section id="finance-Reimbursements">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <h6 class="head6">All Tickets</h6>
+                    <div class="finance-v-box">
+                        
+                        <div class="financebox m-t-0" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket One...<br> <span></span></p>
+                        </div>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Two...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Three...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Four...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Five...<br> <span></span></p>
+                    </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Six...<br> <span></span></p>
+                </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Seven...<br> <span></span></p>
+                        </div>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Eight...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Nine...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Ten...<br> <span></span></p>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+
+    <section id="finance-Reimbursements"  class="support-pending">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <h6 class="head6">Resolved 2025</h6>
+
+                    <div class="finance-v-box">
+                        
+                        <div class="financebox m-t-0" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket One...<br> <span></span></p>
+                        </div>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Two...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Three...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Four...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Five...<br> <span></span></p>
+                    </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Six...<br> <span></span></p>
+                </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Seven...<br> <span></span></p>
+                        </div>
+                
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Eight...<br> <span></span></p>
+            </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Nine...<br> <span></span></p>
+        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <h6 class="head6">Resolved 2024</h6>
+                    <div class="finance-v-box">
+                        
+                        <div class="financebox m-t-0" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket One...<br> <span></span></p>
+                        </div>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Two...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Three...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Four...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Five...<br> <span></span></p>
+                    </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Six...<br> <span></span></p>
+                </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <h6 class="head6">Resolved 2023</h6>
+                    <div class="finance-v-box">
+                        
+                        <div class="financebox m-t-0" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket One...<br> <span></span></p>
+                        </div>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Two...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Three...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Four...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Five...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Six...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Seven...<br> <span></span></p>
+                        </div>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Eight...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Nine...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p>Ticket Ten...<br> <span></span></p>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="finance-Tax">
+        <div class="container ">
+            <div class="row">
+
+                <div class="col-lg-6 offset-lg-3  box-container">
+                    <div class="finance-v-box">
+                        
+                        <div class="hrTicket-container">
+                            <form id="HrTicketForm">
+                                <label>Ticket ID
+                                    <input type="text" name="hrTicket" id="hrTicketTicketID">
+                                </label>
+                                <label>Approver Employee ID 
+                                    <input type="text" name="hrTicket" id="hrTicketApprover">
+                                </label>
+                                <label>Add Description
+                                    <textarea name="hrTicket" id="hrTicketDescription"></textarea>
+                                </label>
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="financeDebtLoanTracker">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Loans</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/debt.png" alt="">
+                            <p>Ongoing Loans<br> <span></span></p>
+                        </div>
+                        <table border="1" class="finance-table">
+                            <tr>
+                                <th>Type</th>
+                                <th class="">Total Coast</th>
+                                <th class="">Closure Date</th>
+                            </tr>
+                            <tr>
+                                <td>Mobile Phone</td>
+                                <td>78,000</td>
+                                <td>6 Dec 2025</td>
+                            </tr>
+                            <tr>
+                                <td>Car</td>
+                                <td>7,70,000</td>
+                                <td>6 April 2028</td>
+                            </tr>
+                            <tr>
+                                <td>Home</td>
+                                <td>17,95,000</td>
+                                <td>5 Feb 2035</td>
+                            </tr>
+
+                            <tr>
+                                <th>Total Claims:</th>
+                                <th class="">2,643,000</th>
+                                <th class="">2035</th>
+                            </tr>
+                        </table>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/debt.png" alt="">
+                            <p>Completed Loans<br> <span></span></p>
+                        </div>
+
+                        <table border="1" class="finance-table">
+                            <tr>
+                                <th>Type</th>
+                                <th class="">Total Coast</th>
+                                <th class="">Closure Date</th>
+                            </tr>
+                            <tr>
+                                <td>Mobile Phone</td>
+                                <td>28,000</td>
+                                <td>6 Oct 2024</td>
+                            </tr>
+                            <tr>
+                                <td>Bike</td>
+                                <td>1,30,000</td>
+                                <td>6 April 2022</td>
+                            </tr>
+                            <tr>
+                                <td>Home Renovation</td>
+                                <td>3,23,000</td>
+                                <td>5 Feb 2021</td>
+                            </tr>
+
+                            <tr>
+                                <th>Total Claims:</th>
+                                <th class="">4,81,000</th>
+                                <th class="">2024</th>
+                            </tr>
+                        </table>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Credit Card</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/atm.png" alt="">
+                            <p>All Credit Cards<br> <span></span></p>
+                        </div>
+
+                        <table border="1" class="finance-table">
+                            <tr>
+                                <th>Bank</th>
+                                <th class="">Credit Limit</th>
+                                <th class="">Used Credit Limit</th>
+                            </tr>
+                            <tr>
+                                <td>HDFC</td>
+                                <td>1,60,000</td>
+                                <td>50,000</td>
+                            </tr>
+                            <tr>
+                                <td>Kotak Mahindra</td>
+                                <td>2,00,000</td>
+                                <td>2,00,000</td>
+                            </tr>
+                            <tr>
+                                <td>SBI</td>
+                                <td>80,000</td>
+                                <td>00</td>
+                            </tr>
+
+                            <tr>
+                                <th>Total Limit:</th>
+                                <th class="">4,40,000</th>
+                                <th class="">2,50,000</th>
+                            </tr>
+
+                            <tr>
+                                <th>Available Limit:</th>
+                                <th class=""></th>
+                                <th class="">1,90,000</th>
+                            </tr>
+                        </table>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Credit Score</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/credit-score.png" alt="">
+                            <p>Your Credti Score<br> <span>758</span></p>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="finance-Financial-Wellness-Tips">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Finance Tips</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/budgeting.png" alt="">
+                            <p>Budgeting<br> <span></span></p>
+                        </div>
+                        <div class="resources">
+                                <a href="#"><img src="images/youtube.png" alt=""></a>
+                                <a href="#"><img src="images/blog.png" alt=""></a>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/tax-savings.png" alt="">
+                            <p>Tax-Saving<br> <span></span></p>
+                        </div>
+                        <div class="resources">
+                            <a href="#"><img src="images/youtube.png" alt=""></a>
+                            <a href="#"><img src="images/blog.png" alt=""></a>
+                    </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/investments.png" alt="">
+                            <p>Investments<br> <span></span></p>
+                        </div>
+                        <div class="resources">
+                            <a href="#"><img src="images/youtube.png" alt=""></a>
+                            <a href="#"><img src="images/blog.png" alt=""></a>
+                    </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Financial Literacy Webinars</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/performance.png" alt="">
+                            <p>Why Attend?<br> <span></span></p>
+                        </div>
+                        <table border="1" class="finance-table finance-table2">
+                            <tr>
+                                <td>Gain financial confidence & make better money decisions</td>
+                            </tr>
+                            <tr>
+                                <td>Learn strategies to grow wealth & reduce financial stress
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Interactive Q&A with financial experts
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/performance.png" alt="">
+                            <p>Key Topics<br> <span></span></p>
+                        </div>
+                        <table border="1" class="finance-table finance-table2">
+                            <tr>
+                                <td>Personal Budgeting & Expense Tracking – How to create & stick to a budget</td>
+                            </tr>
+                            <tr>
+                                <td>Savings & Investment Planning – Smart saving habits, stocks, mutual funds, and retirement plans</td>
+                            </tr>
+                            <tr>
+                                <td>Understanding Credit Scores & Loans – How credit works & ways to improve your score</td>
+                            </tr>
+                            <tr>
+                                <td>Debt Management & Repayment Strategies – Tips to pay off loans & avoid bad debt
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Tax Planning & Optimization – Maximize tax savings through legal deductions
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Retirement Planning & Pension Benefits – Secure your future with the right investment plans
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Emergency Fund & Financial Safety Nets – Preparing for financial uncertainties
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Employee Benefits & Perks – Making the most of company-sponsored financial benefits
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/performance.png" alt="">
+                            <p>Webinar Features<br> <span></span></p>
+                        </div>
+
+                        <table border="1" class="finance-table finance-table2">
+                            <tr>
+                                <td>Expert-led sessions & real-world case studies
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Live Q&A with financial advisors
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Free resources, calculators & templates
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Actionable strategies for immediate financial improvement
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Financial planning Tools</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/performance.png" alt="">
+                            <p>Budgeting & Expense Tracking<br> <span></span></p>
+                        </div>
+                        <div class="toolBTNs">
+                            <a href="https://mint.intuit.com/" target="_blank">Mint</a>
+                            <a href="https://www.youneedabudget.com/" target="_blank">YNAB</a>
+                            <a href="https://pocketguard.com/" target="_blank">PocketGuard</a>
+                        </div>
+                        
+
+                        <div class="financebox" id="tax">
+                            <img src="images/performance.png" alt="">
+                            <p>Savings & Investment Planning<br> <span></span></p>
+                        </div>
+                        <div class="toolBTNs">
+                            <a href="https://www.personalcapital.com/" target="_blank">Personal Capital</a>
+                            <a href="https://groww.in/" target="_blank">Groww</a>
+                            <a href="https://robinhood.com/" target="_blank">Robinhood</a>
+                        </div>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/performance.png" alt="">
+                            <p>Retirement & L-T Wealth Planning<br> <span></span></p>
+                        </div>
+                        <div class="toolBTNs">
+                            <a href="https://www.fidelity.com/" target="_blank">Fidelity</a>
+                            <a href="https://epfo.gov.in/" target="_blank">EPFO Portal (India)</a>
+                            <a href="https://www.nps.gov.in/" target="_blank">NPS (National Pension System)</a>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="finance-Cost-Calculator">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>City-to-City Cost Comparison</h6>
+                        <div class="financebox" id="tax">
+                            <img src="images/performance.png" alt="">
+                            <p>Rental, Fuel, Cabs, etc.<br> <span></span></p>
+                        </div>
+                        
+                        <div class="expenseBOX">
+                            <label >City 1<input type="text" placeholder="Enter Amount">
+                            </label>
+                            <label >City 2<input type="text" placeholder="Enter Amount">
+                            </label>
+                            <button>Compare</button>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Expense Calculator</h6>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/performance.png" alt="">
+                            <p>Fixed Expenses<br> <span></span></p>
+                        </div>
+                        <div class="expenseBOX">
+                            <label >Expenses Name<input type="text" placeholder="Enter Amount">
+                            </label>
+                            <label >Add Coast<input type="text" placeholder="Enter Amount">
+                                
+                            </label>
+                            <button>Add</button>
+                                <button>Final Amount</button>
+                        </div>
+                        
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Expense Calculator</h6>
+                        
+
+                        <div class="financebox" id="tax">
+                            <img src="images/performance.png" alt="">
+                            <p>Liquide Expenses<br> <span></span></p>
+                        </div>
+                        <div class="expenseBOX">
+                            <label >Expenses Name<input type="text" placeholder="Enter Amount">
+                            </label>
+                            <label >Add Coast<input type="text" placeholder="Enter Amount">
+                                
+                            </label>
+                            <button>Add</button>
+                            <button>Final Amount</button>
+                        </div>
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        let salaryBTN = document.querySelector('#salary')
+        let bonusBTN = document.querySelector('#bonus')
+        let expenseBTN = document.querySelector('#expense')
+        let taxBTN = document.querySelector('#tax')
+        let debtBTN = document.querySelector('#debt')
+        let WellnessBTN = document.querySelector('#Wellness')
+        let CalculatorBTN = document.querySelector('#Calculator')
+        
+
+        let financeSalary = document.querySelector('#finance-Salary2')
+        let financeBonuses = document.querySelector('#finance-Bonuses')
+        let financeReimbursements = document.querySelector('#finance-Reimbursements')
+        let financeTax = document.querySelector('#finance-Tax')
+        let financeDebtLoanTracker = document.querySelector('#financeDebtLoanTracker')
+        let financeFinancialWellnessTips = document.querySelector('#finance-Financial-Wellness-Tips')
+        let financeCostCalculator = document.querySelector('#finance-Cost-Calculator')
+        
+        
+        salaryBTN.addEventListener('click',function(){
+            financeBonuses.style.display = 'none'
+            financeReimbursements.style.display = 'none'
+            financeTax.style.display = 'none'
+            financeDebtLoanTracker.style.display = 'none'
+            financeFinancialWellnessTips.style.display = 'none'
+
+            financeSalary.style.display = 'block'
+        })
+
+        bonusBTN.addEventListener('click',function(){
+            financeReimbursements.style.display = 'none'
+            financeTax.style.display = 'none'
+            financeSalary.style.display = 'none'
+            financeDebtLoanTracker.style.display = 'none'
+            financeFinancialWellnessTips.style.display = 'none'
+
+            financeBonuses.style.display = 'block'
+        })
+
+        expenseBTN.addEventListener('click',function(){
+            financeTax.style.display = 'none'
+            financeSalary.style.display = 'none'
+            financeBonuses.style.display = 'none'
+            financeDebtLoanTracker.style.display = 'none'
+            financeFinancialWellnessTips.style.display = 'none'
+
+            financeReimbursements.style.display = 'block'
+        })
+
+        taxBTN.addEventListener('click',function(){
+            financeSalary.style.display = 'none'
+            financeBonuses.style.display = 'none'
+            financeReimbursements.style.display = 'none'
+            financeDebtLoanTracker.style.display = 'none'
+            financeFinancialWellnessTips.style.display = 'none'
+
+            financeTax.style.display = 'block'
+        })
+
+        debtBTN.addEventListener('click',function(){
+            financeSalary.style.display = 'none'
+            financeBonuses.style.display = 'none'
+            financeReimbursements.style.display = 'none'
+            financeTax.style.display = 'none'
+            financeFinancialWellnessTips.style.display = 'none'
+            financeDebtLoanTracker.style.display = 'block'
+
+        })
+
+        WellnessBTN.addEventListener('click',function(){
+            financeSalary.style.display = 'none'
+            financeBonuses.style.display = 'none'
+            financeReimbursements.style.display = 'none'
+            financeTax.style.display = 'none'
+            financeDebtLoanTracker.style.display = 'none'
+            financeFinancialWellnessTips.style.display = 'block'
+
+        })
+
+        CalculatorBTN.addEventListener('click',function(){
+            financeSalary.style.display = 'none'
+            financeBonuses.style.display = 'none'
+            financeReimbursements.style.display = 'none'
+            financeTax.style.display = 'none'
+            financeDebtLoanTracker.style.display = 'none'
+            financeFinancialWellnessTips.style.display = 'none'
+            financeCostCalculator.style.display = 'block'
+
+        })
+
+        
+</script>
+</body>
+</html>
+

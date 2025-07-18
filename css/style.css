@@ -1,0 +1,789 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* html::-webkit-scrollbar {
+    width: 8px;
+}
+        
+html::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #1b4965;
+}
+        
+html::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+  background-color: #cae9ff;
+} */
+
+::-webkit-scrollbar {
+    width: 8px;
+    scroll-behavior: smooth;
+}
+        
+::-webkit-scrollbar-track {
+    border-radius: 8px;
+    padding: 1px;
+  background-color: #cae9ff;
+
+}
+        
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    padding: 1px;
+
+    background-color: #1b4965;
+    /* background-color: #cae9ff; */
+}
+
+:root{
+    --head: #1b4965;
+    --text: #000000;
+    --bg0: #1b4965;
+    --bg1: #5fa8d3;
+    --bg2: #62b6cb;
+    --bg3: #bee9e8;
+    --bg4: #cae9ff;
+    --W: #ffffff;
+    --b: #000000;
+    --P: "Roboto", serif;
+    --H: "Inter", serif;
+}
+body{
+    font-family: var(--P);
+}
+h1,h2,h3,h4{
+    color: var(--head);
+    font-family: var(--H);
+}
+p{
+    color: var(--text);
+    font-size: 16px;
+}
+header{
+    padding: 15px 0;
+    box-shadow: 0px -5px 10px 10px var(--bg3);
+    position: fixed;
+    width: 100%;
+    background: var(--W);
+}
+.P-RL-15{
+    padding-right: 25px;
+    padding-left: 25px;
+}
+.sec1 {
+    padding-top: 100px!important;
+}
+.logo {
+    color: var(--head);
+    font-family: var(--H);
+    font-size: 25px;
+    font-weight: 600;
+}
+.logo span{
+    color: var(--text);
+    font-family: var(--P);
+    font-size: 25px;
+    font-weight: 400;
+}
+.top-nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    margin: 0;
+    align-items: center;
+}
+.top-nav ul a{
+    color: var(--bg0);
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 0 0 0 15px;
+    transition: 0.3s all;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+.nav-V-center{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+.V-center{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+a,button{
+    background: var(--bg0);
+    padding: 15px 30px;
+    border: 1px solid var(--bg0);
+    border-radius: 5px;
+    color: var(--W);
+    text-decoration: none;
+    margin: 10px;
+    text-align: center;
+    transition: 0.3s all;   
+}
+a:hover,button:hover,.drp-btn:hover{
+    background: var(--bg1);
+    border: 1px solid var(--bg1);
+    color: var(--W);
+
+}
+section{
+    padding: 50px 0;
+}
+.equalBTN{
+    width: 60%;
+}
+.VH-center{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#selection {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+#login{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.selectionButtons{
+    display: flex;
+    width: 500px;
+    align-items: center;
+    height: 400px;
+    background: var(--bg4);
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    filter: drop-shadow(4px 4px 10px #ccc);
+}
+label{
+    width: 100%;
+    padding: 15px;
+}
+input,select,textarea{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--bg1);
+}
+#loginForm button {
+    margin: 10px 15px;
+}
+.emp-profileImage img{
+    width: 100%;
+    border-radius: 100%;
+}
+.emp-details {
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.profile-container{
+    box-shadow: 0px 1px 16px 0px var(--bg4);
+    border-radius: 10px;
+    padding: 30px;
+    width: 47%;
+    margin: 15px;
+}
+.profile-container2 {
+    box-shadow: 0px 1px 16px 0px var(--bg4);
+    border-radius: 10px;
+    padding: 30px;
+    width: 50%;
+    margin: 15px auto;
+}
+.profile-container3 {
+    box-shadow: 0px 1px 16px 0px var(--bg4);
+    border-radius: 10px;
+    padding: 30px;
+    /* width: 50%; */
+    margin: 15px auto;
+}
+.box-container{
+    box-shadow: 0px 1px 16px 0px var(--bg4);
+    border-radius: 10px;
+    padding: 30px;
+}
+.emp-details h1,.emp-details p{
+    display: block;
+    width: 100%;
+}
+.emp-details h1 input,.emp-details p input{
+    width: inherit;
+    padding: 0;
+    margin-top: 0;
+    border-radius: 5px;
+    border: none;
+}
+.emp-details h1 input:focus-visible,.emp-details p input:focus-visible{
+    outline: none;
+}
+.editButtons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.editButtons button{
+    padding: 5px 16px;
+}
+#financeoptions{
+    display: flex
+;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.financebox{
+    width: 23%;
+    background: var(--bg4);
+    padding: 15px;
+    display: flex
+;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 15px 0;
+    border-radius: 5px;
+    transition: 0.3s all;
+}
+.financebox img{
+    width: 15%;
+}
+.financebox h5{
+    font-size: 18px;
+    margin: 0;
+}
+.financebox:hover{
+    box-shadow: 0px 1px 16px 0px var(--bg4);
+}
+.scaleHVR{
+    transition: 0.3s all;
+}
+.scaleHVR:hover{
+    transform: scale(1.02);
+}
+#finance-Salary{
+    padding: 0;
+}
+.finance-v-box h6{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.head6{
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding: 0 10px;
+}
+.finance-table, .leave-status-table{
+    width: 100%; 
+}
+.finance-table td,.finance-table th {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+.leave-status-table td,.leave-status-table th {
+    border: 1px solid #ccc;
+    padding: 7px;
+    font-size: 14px;
+}
+.finance-v-box .financebox{
+    width: 100%;
+    justify-content: flex-start;
+}
+.finance-v-box .financebox img{
+    margin-right: 25px;
+}
+.finance-v-box .financebox p{
+    margin: 0;
+    font-size: 18px;
+    color: var(--head);
+    font-weight: 500;
+}
+.finance-v-box .financebox p span{
+    margin: 0;
+    font-size: 16px;
+    color: var(--b);
+    font-weight: 400;
+}
+#PayslipsForm button{
+background: var(--bg0);
+padding: 15px 30px;
+border-radius: 5px;
+color: var(--W);
+text-decoration: none;
+margin: 15px 0;
+text-align: center;
+transition: 0.3s all;
+}
+.finance-table tr td:last-child, .finance-table tr th:last-child {
+    text-align: right;
+}
+.finance-table2 tr td:last-child, .finance-table2 tr th:last-child {
+    text-align: left;
+}
+.claimUpload{
+    padding: 0 15px 15px 15px;
+}
+#ClaimsForm button{
+    margin: 5px 15px;
+}
+#plusBTN{
+    display: block;
+    margin: 0px 15px 15px!important;
+    padding: 5px 10px;
+}
+.resources a{
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    color: unset;
+    text-decoration: none;
+    margin: 0px 20px 0 0;
+    text-align: center;
+    transition: 0.3s all;
+    border: none;
+}
+.resources img {
+    width: 10%;
+}
+.resources{
+    margin: 30px 0;
+}
+.toolBTNs{
+    display: flex;
+    flex-wrap: wrap;
+}
+#finance-Tax,#finance-Reimbursements,#finance-Bonuses,#financeDebtLoanTracker,#finance-Financial-Wellness-Tips,#finance-Cost-Calculator{
+    display: none;
+    padding: 0;
+    margin-bottom: 50px;
+}
+.leaveAllBoxes{
+    display: flex
+;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.leaveBalanceBox-text-container{
+    text-align: center;
+}
+.leaveBalanceBox{
+    width: 170px;
+    height: auto;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 1px 16px 0px var(--bg4);
+}
+.leaveCount{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-size: 25px;
+    font-weight: 600;
+    color: #3d3d3d;
+    
+}
+.leaveCount span{
+    font-size: 12px;
+    font-weight: 400;
+}
+.leaveBalanceBox-text-small{
+    font-size: 14px;
+    color: #616161;
+    margin-bottom: 0;
+}
+.leaveCount-1 {
+    background-color: #5fa8d387;
+    color: var(--bg0);  
+}
+.leaveCount-2{
+    background-color: #62b6cb96;
+    color: var(--bg0);
+}
+.leaveCount-3{
+    background-color: var(--bg3);
+    color: var(--bg0);
+}
+.leaveCount-4{
+    background-color: var(--bg4);
+    color: var(--bg0);
+}
+p.leaveBalanceBox-text {
+    margin-bottom: 5px;
+    color: #4f4f4f;
+}
+.leave-status{
+    color: #fff;
+    padding: 7px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    display: block;
+    text-align: center;
+}
+.LG{
+    background: green;
+}
+.LO{
+    background: orange;
+}
+.LR{
+    background: red;
+}
+.leaveBalance,.leave-status-container,.leaveWorkDays{
+    margin-top: 30px;
+}
+.small-heading{
+    margin-bottom: 20px;
+}
+.leaveSubHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#leaveSessionSelector{
+    width: 150px; 
+    padding: 10px 0;
+    border-radius: 5px;
+}
+.leaveRequest button {
+    margin: 10px 0!important;
+}
+#LeavePopUp{
+    background: #00000061;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+}
+.pop-up-container{
+    /* position: fixed; */
+    /* width: 100%; */
+    /* height: 100%; */
+    top: 10%;
+    background: #fff;
+    padding: 30px;
+    left: 20%;
+    right: 20%;
+}
+.pop-up-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#closePopUp{
+    background: var(--bg0);
+    padding: 5px 15px;
+    border: 1px solid var(--bg0);
+    border-radius: 5px;
+    color: var(--W);
+    text-decoration: none;
+    margin: 0;
+    text-align: center;
+    transition: 0.3s all;
+}
+#closePopUp:hover {
+    background: var(--bg3);
+    border: 1px solid var(--bg3);
+    color: var(--b);
+}
+#emp-financeDashboard{
+    padding: 0 0 50px 0;
+}
+
+#emp-financeDashboard .financebox {
+    justify-content: center;
+}
+#emp-financeDashboard .financebox img {
+    width: 15%;
+    margin-right: 15px;
+}
+#finance-Salary2{
+    display: block;
+    padding: 0;
+    margin-bottom: 50px;
+}
+#emp-support .financebox {
+    align-items: center;
+    justify-content: center;
+}
+#emp-support .financebox img {
+    width: 15%;
+    margin-right: 15px;
+}
+.support-pending .finance-v-box {
+    height: 450px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 0 10px 10px 10px;
+}
+.m-t-0{
+    margin-top: 0!important;
+}
+#HrTicketForm button{
+    margin: 10px 15px;
+}
+#emp-aAnda .financebox{
+    justify-content: center;
+}
+#emp-aAnda .financebox img{
+    margin-right: 15px;
+}
+#emp-dashboard .financebox {
+    width: auto;
+    margin: 0 0 15px 0;
+}
+.skills-table tr td{
+    padding: 10px 5px;
+}
+
+.skills-table tr td:last-child{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-end;
+    }
+.skills-table tr td progress{
+    margin-right: 10px;
+}
+
+.skills-table{
+    width: 100%;
+}
+#emp-dashboard{
+    padding-bottom: 25px;
+}
+#emp-dashboard .financebox {
+    justify-content: center;
+}
+#emp-dashboard .financebox img{
+    margin-right: 15px;
+}
+/* .financebox2 {
+    background: #62b6cb6b!important;
+} */
+
+.financebox2 {
+    background: #cae9ff
+    !important;
+}
+.emp-profile-image-label{
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 10px;
+
+    background: var(--bg0);
+    color: var(--W);
+    text-decoration: none;
+    margin: 0;
+    text-align: center;
+    transition: 0.3s all;
+}
+#save{
+    display: none;
+}
+.profile-image-upload{
+    display: none;
+    text-align: center;
+    width: 100%;
+    padding: 15px 10px;
+}
+#profile-btn-img{
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+}
+#drp-btn {
+    background: var(--bg0);
+    padding: 10px 20px;
+    border: 1px solid var(--bg0);
+    border-radius: 5px;
+    color: var(--W);
+    text-decoration: none;
+    margin: 0;
+    text-align: center;
+    transition: 0.3s all;
+    width: 90%;
+}
+.logo-v-center{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.dropdown-item{
+    padding: 5px 10px;
+    margin: 0;
+    border: none;
+}
+.dropdown-item:hover{
+    padding: 5px 10px;
+    background-color: var(--bg0);
+    color: var(--W);
+    margin: 0;
+    border: none;
+}
+.dropdown-menu.show{
+    width: 90%;
+}
+#ticketSubject{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
+}
+.emp-details p span:last-child{
+    margin-left: 10px;
+    font-size: 14px;
+    color: #616161;
+}
+.emp-details p #edit-icon:hover, .emp-details p #save-icon:hover{
+    cursor: pointer;
+    color: #000;
+
+}
+#phoneUpdate{
+    display: none;
+}
+#phoneUpdate input{
+    width: 30%;
+    padding: 2px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--bg1);
+    margin-left: 10px;
+}
+.financeBoxActive{
+    background:var(--bg3)!important;
+}
+.index-body{
+    background-image: url(../employee/images/bg1.jpg);
+    background-size: contain;
+    background-position: 80%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-color: #fafafa;
+}
+#OTP-field, #verifyOTP{
+    display: none;
+}
+.additional-buts{
+    display: block;
+    width: 100%;
+    padding-bottom: 15px;
+}
+.additional-buts button{
+    margin: 10px 15px;
+    background: var(--bg1);
+    padding: 10px 15px;
+    border: 1px solid var(--bg1);
+    border-radius: 5px;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s all;
+}
+.additional-buts button:hover{
+    background: var(--bg0);
+    border: 1px solid var(--bg0);
+    color: var(--W);
+}
+.backBUT button {
+    background: transparent;
+    padding: 15px 20px;
+    border: 1px solid var(--bg0);
+    border-radius: 50%;
+    color: var(--bg0);
+    text-decoration: none;
+    margin: 20px;
+    text-align: center;
+    transition: 0.3s all;
+}
+.backBUT button:hover {
+    background: var(--bg1);
+    border: 1px solid var(--bg1);
+    color: var(--W);
+}
+.hr-emp-details{
+    padding: 20px 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.hr-emp-details h2{
+    font-size: 25px;
+}
+.hr-emp-box {
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+.hr-emp-details2 {
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.hr-emp-box #financeoptions {
+    justify-content: flex-start;
+    width: 100%;
+}
+.hr-emp-box .emp-profileImage img {
+    width: 90%;
+    border-radius: 100%;
+}
+.hr-emp-box .emp-profileImage {
+    text-align: center;
+}
+.hr-emp-box .financebox {
+    justify-content: center;
+    width: 80%!important;
+}
+.leave-table{
+    width: 100%;
+}
+.leave-table table{
+    margin-top: 15px;
+}
+.hr-emp-details2 p{
+    display: block;
+    width: 100%;
+}
+.SearchContainer{
+    display: flex
+;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+    justify-content: flex-start;
+    align-items: center;
+}
+.SearchContainer input{
+    width: 70%;
+    margin: 0;
+}

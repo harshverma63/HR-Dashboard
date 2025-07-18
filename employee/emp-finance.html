@@ -1,0 +1,1047 @@
+<script>
+    if(localStorage.getItem('employeeLogin')== undefined || localStorage.getItem('employeeLogin')== null){
+        window.location.href = 'emp-index.html';
+    }
+
+    const employeeLogin = JSON.parse(localStorage.getItem('employeeLogin'));
+    // console.log(employeeLogin);
+    console.log(employeeLogin);
+
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Finance</title>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 logo-v-center">
+                    <div class="logo">
+                        EMP <span>Dash</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 nav-V-center">
+                    <div class="top-nav">
+                        <ul>
+                            <li class="nav-item"><a href="emp-dashboard.html">Home</a></li>
+                            <!-- <li class="nav-item"><a href="emp-profile.html">Profile</a></li> -->
+                            <li class="nav-item"><a href="emp-finance.html">Finance</a></li>
+                            <li class="nav-item"><a href="emp-leaves.html">Leaves</a></li>
+                            <li class="nav-item"><a href="emp-a&a.html">Achievements & Awards</a></li>
+                            <li class="nav-item"><a href="emp-support.html">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="profile-btn">
+                        <div class="dropdown">
+
+                            <a class="btn btn-secondary dropdown-toggle" id="drp-btn"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <span id="profile-btn-name"></span>
+                              <span id="profile-btn-img-span"><img id="profile-btn-img" src="" alt=""></span>
+                            </a>
+                          
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item " href="emp-profile.html">Profile</a></li>
+                              <!-- <li><a class="dropdown-item" href="#">Change Password</a></li> -->
+                              <li><button class="dropdown-item" id="logOut" onclick="logOut()">Log Out</button></li>
+                            </ul>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="emp-finance" class="sec1">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="financeoptions">
+                        
+                        <div class="financebox scaleHVR financeBoxActive" id="salary">
+                            <img src="images/salary.png" alt="">
+                            <h5>Salary & Payslips</h5>
+                        </div>
+
+                        <div class="financebox scaleHVR" id="bonus">
+                            <img src="images/bonus.png" alt="">
+                            <h5>Bonuses & Incentives</h5>
+                        </div>
+
+                        <div class="financebox scaleHVR" id="expense">
+                            <img src="images/expenses.png" alt="">
+                            <h5>Expense Reimbursements</h5>
+                        </div>
+
+                        <div class="financebox scaleHVR" id="tax">
+                            <img src="images/tax.png" alt="">
+                            <h5>Tax & Deductions</h5>
+                        </div>
+
+                        <div class="financebox scaleHVR" id="debt">
+                            <img src="images/debt.png" alt="">
+                            <h5>Debt & Loan Tracker</h5>
+                        </div>
+
+                        <div class="financebox scaleHVR" id="Wellness">
+                            <img src="images/wellness.png" alt="">
+                            <h5>Financial Wellness Tips</h5>
+                        </div>
+
+                        <div class="financebox scaleHVR" id="Calculator">
+                            <img src="images/calculator.png" alt="">
+                            <h5>Cost of Living Calculator</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="finance-Salary">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Salay Breakdown</h6>
+                        <table border="1" class="finance-table">
+                            <tr>
+                                <td>Base Salary:</td>
+                                <td class="">50,000</td>
+                            </tr>
+                            <tr>
+                                <td>HRA:</td>
+                                <td class="">16,000</td>
+                            </tr>
+                            <tr>
+                                <td>Gadget Reimbursements:</td>
+                                <td class="">4,000</td>
+                            </tr>
+                            <tr>
+                                <td>Total A:</td>
+                                <td class="">70,000</td>
+                            </tr>
+                            <tr>
+                                <td>PF Deductions:</td>
+                                <td class="">1,300</td>
+                            </tr>
+                            <tr>
+                                <td>Medical Deductions:</td>
+                                <td class="">980</td>
+                            </tr>
+                            <tr>
+                                <td>Gratuity Deductions:</td>
+                                <td class="">1,100</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Total B:</td>
+                                <td class="">3,380</td>
+                            </tr>
+
+                            <tr>
+                                <th>Total A-B:</th>
+                                <th class="">66,620</th>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Last & Upcoming Salary Date</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/bank.png" alt="">
+                            <p>Last Paid Date <br> <span>31 Jan 2025</span></p>
+                        </div>
+
+                        <div class="financebox financebox2" id="tax">
+                            <img src="images/bank.png" alt="">
+                            <p>Upcoming Salary Date <br> <span>28 Feb 2025</span></p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Payslips</h6>
+                        
+                        <form action="" id="PayslipsForm">
+                            <select name="" id="payslips">
+                                <option >Select Duration</option>
+                                <option value="Last 3 Months" class="durationSelector">Last 3 Months</option>
+                                <option value="Last 6 Months" class="durationSelector">Last 6 Months</option>
+                                <option value="Last 12 Months" class="durationSelector">Last 12 Months</option>
+                                <option value="All" class="durationSelector">All</option>
+                            </select>
+                            <button class="btn1">Download</button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="finance-Bonuses">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Performance-Based Incentives</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/OvertimeBonus.png" alt="">
+                            <p>Overtime Bonus Earned: <br> <span>17,500</span></p>
+                        </div>
+
+                        <div class="financebox financebox2" id="tax">
+                            <img src="images/annualbonus.png" alt="">
+                            <p>Annual Bonus <br> <span>1,50,000</span></p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Upcoming Bonus Schedule</h6>
+                        
+                        <div class="financebox" id="BonusSchedule">
+                            <img src="images/schedule.png" alt="">
+                            <p>Overtime Bonus<br> <span>In Upcoming Salary</span></p>
+                        </div>
+
+                        <div class="financebox financebox2" id="BonusSchedule">
+                            <img src="images/schedule.png" alt="">
+                            <p>Annual Bonus <br> <span>31 Mar 2025</span></p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Referral or Other Rewards</h6>
+                        
+                        <div class="financebox" id="Referral">
+                            <img src="images/referrals.png" alt="">
+                            <p>Total Referrals: 3<br> <span>75,000</span></p>
+                        </div>
+
+                        <div class="financebox financebox2" id="Referral">
+                            <img src="images/perf.png" alt="">
+                            <p>Outstanding Performance <br> <span>5,000</span></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="finance-Reimbursements">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Pending & Approved Reimbursement Requests</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/approved.png" alt="">
+                            <p>Approved Status<br> <span></span></p>
+                        </div>
+                        <table border="1" class="finance-table">
+                            <tr>
+                                <td>Gadget - Mobile Phone:</td>
+                                <td class="">80,000</td>
+                            </tr>
+                            <tr>
+                                <td>Work Station:</td>
+                                <td class="">20,000</td>
+                            </tr>
+                            <tr>
+                                <td>Travel Allowence:</td>
+                                <td class="">2,500</td>
+                            </tr>
+
+                            <tr>
+                                <th>Total:</th>
+                                <th class="">102,500</th>
+                            </tr>
+                        </table>
+
+
+                        <div class="financebox financebox2" id="tax">
+                            <img src="images/pending.png" alt="">
+                            <p>Pending Status<br> <span></span></p>
+                        </div>
+
+                        <table border="1" class="finance-table">
+                            <tr>
+                                <td>Gadget - Laptop:</td>
+                                <td class="">125,000</td>
+                            </tr>
+                            <tr>
+                                <td>Travel Allowence:</td>
+                                <td class="">1,500</td>
+                            </tr>
+                            <tr>
+                                <td>Travel Allowence:</td>
+                                <td class="">500</td>
+                            </tr>
+
+                            <tr>
+                                <th>Total:</th>
+                                <th class="">127,000</th>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>New Expense Claims</h6>
+                        
+                        <div class="financebox" id="BonusSchedule">
+                            <img src="images/claim.png" alt="">
+                            <p>Raise New Claims<br> <span></span></p>
+                        </div>
+
+                        <form action="" id="ClaimsForm">
+                            <div id="plusDocs">
+                                <label>What type of document it is?<input type="text" id="claimDocumentType" placeholder="Enter type of document" required></label>
+                                
+                                <label class="claimUpload"><input type="file" id="claimDocument" placeholder="" required></label>
+                            </div>
+
+                            <label class="claimUpload">Click here to upload more documents.</label>
+                            <button id="plusBTN"><i class="fa-solid fa-plus"></i></button>
+
+                            <button id="claimBTN">Download</button>
+                        </form>
+
+                        
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Reimbursement Status</h6>
+                        
+                        <div class="financebox" id="Referral">
+                            <img src="images/refund.png" alt="">
+                            <p>Approved and Pending<br> <span></span></p>
+                        </div>
+
+                        <table border="1" class="finance-table">
+                            <tr>
+                                <th>Type</th>
+                                <th class="">Claim Date</th>
+                                <th class="">Status</th>
+                            </tr>
+                            <tr>
+                                <td>Gadget - Mobile Phone</td>
+                                <td>1 Aug 2024</td>
+                                <td>Approved</td>
+                            </tr>
+
+                            <tr>
+                                <td>Work Station</td>
+                                <td>17 Oct 2024</td>
+                                <td>Approved</td>
+                            </tr>
+
+                            <tr>
+                                <td>Travel Allowence</td>
+                                <td>21 Nov 2024</td>
+                                <td>Approved</td>
+                            </tr>
+
+                            <tr>
+                                <td>Gadget - Laptop</td>
+                                <td>13 Jan 2025</td>
+                                <td>Pending</td>
+                            </tr>
+
+                            <tr>
+                                <td>Travel Allowence</td>
+                                <td>19 Feb 2025</td>
+                                <td>Pending</td>
+                            </tr>
+
+                            <tr>
+                                <td>Travel Allowence</td>
+                                <td>29 Jan 2025</td>
+                                <td>Pending</td>
+                            </tr>
+
+                            <tr>
+                                <th colspan="2">Total Claims:</th>
+                                <th class="">6</th>
+                            </tr>
+                        </table>
+
+
+                        <div class="financebox financebox2" id="Referral">
+                            <img src="images/rejected.png" alt="">
+                            <p>Rejected<br> <span></span></p>
+                        </div>
+
+                        <table border="1" class="finance-table">
+                            <tr>
+                                <th>Type</th>
+                                <th class="">Claim Date</th>
+                                <th class="">Status</th>
+                            </tr>
+                            <tr>
+                                <td>International Travel</td>
+                                <td>3 Mar 2024</td>
+                                <td>Rejected</td>
+                            </tr>
+
+                            <tr>
+                                <td>Work Station</td>
+                                <td>3 Apr 2023</td>
+                                <td>Rejected</td>
+                            </tr>
+
+                            <tr>
+                                <th colspan="2">Total Claims:</th>
+                                <th class="">2</th>
+                            </tr>
+                        </table>
+
+                       
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="finance-Tax">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Tax Deductions</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/iTax.png" alt="">
+                            <p>Income Tax<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox financebox2" id="tax">
+                            <img src="images/pf.png" alt="">
+                            <p>Provident Fund<br> <span></span></p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Annual Tax Summary</h6>
+                        
+                        <div class="financebox" id="BonusSchedule">
+                            <img src="images/it.png" alt="">
+                            <p>Income Tax<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox financebox2" id="BonusSchedule">
+                            <img src="images/tds.png" alt="">
+                            <p>TDS<br> <span></span></p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Tax Documents</h6>
+                        
+                        <div class="financebox" id="Referral">
+                            <img src="images/f1.png" alt="">
+                            <p>W-2, 1099<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox financebox2" id="Referral">
+                            <img src="images/f2.png" alt="">
+                            <p>Form 16<br> <span></span></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="financeDebtLoanTracker">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Loans</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/oLoan.png" alt="">
+                            <p>Ongoing Loans<br> <span></span></p>
+                        </div>
+                        <table border="1" class="finance-table">
+                            <tr>
+                                <th>Type</th>
+                                <th class="">Total Coast</th>
+                                <th class="">Closure Date</th>
+                            </tr>
+                            <tr>
+                                <td>Mobile Phone</td>
+                                <td>78,000</td>
+                                <td>6 Dec 2025</td>
+                            </tr>
+                            <tr>
+                                <td>Car</td>
+                                <td>7,70,000</td>
+                                <td>6 April 2028</td>
+                            </tr>
+                            <tr>
+                                <td>Home</td>
+                                <td>17,95,000</td>
+                                <td>5 Feb 2035</td>
+                            </tr>
+
+                            <tr>
+                                <th>Total Claims:</th>
+                                <th class="">2,643,000</th>
+                                <th class="">2035</th>
+                            </tr>
+                        </table>
+
+                        <div class="financebox financebox2" id="tax">
+                            <img src="images/cLoan.png" alt="">
+                            <p>Completed Loans<br> <span></span></p>
+                        </div>
+
+                        <table border="1" class="finance-table">
+                            <tr>
+                                <th>Type</th>
+                                <th class="">Total Coast</th>
+                                <th class="">Closure Date</th>
+                            </tr>
+                            <tr>
+                                <td>Mobile Phone</td>
+                                <td>28,000</td>
+                                <td>6 Oct 2024</td>
+                            </tr>
+                            <tr>
+                                <td>Bike</td>
+                                <td>1,30,000</td>
+                                <td>6 April 2022</td>
+                            </tr>
+                            <tr>
+                                <td>Home Renovation</td>
+                                <td>3,23,000</td>
+                                <td>5 Feb 2021</td>
+                            </tr>
+
+                            <tr>
+                                <th>Total Claims:</th>
+                                <th class="">4,81,000</th>
+                                <th class="">2024</th>
+                            </tr>
+                        </table>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Credit Card</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/atm.png" alt="">
+                            <p>All Credit Cards<br> <span></span></p>
+                        </div>
+
+                        <table border="1" class="finance-table">
+                            <tr>
+                                <th>Bank</th>
+                                <th class="">Credit Limit</th>
+                                <th class="">Used Credit Limit</th>
+                            </tr>
+                            <tr>
+                                <td>HDFC</td>
+                                <td>1,60,000</td>
+                                <td>50,000</td>
+                            </tr>
+                            <tr>
+                                <td>Kotak Mahindra</td>
+                                <td>2,00,000</td>
+                                <td>2,00,000</td>
+                            </tr>
+                            <tr>
+                                <td>SBI</td>
+                                <td>80,000</td>
+                                <td>00</td>
+                            </tr>
+
+                            <tr>
+                                <th>Total Limit:</th>
+                                <th class="">4,40,000</th>
+                                <th class="">2,50,000</th>
+                            </tr>
+
+                            <tr>
+                                <th>Available Limit:</th>
+                                <th class=""></th>
+                                <th class="">1,90,000</th>
+                            </tr>
+                        </table>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Credit Score</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/credit-score.png" alt="">
+                            <p>Your Credit Score<br> <span>758</span></p>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="finance-Financial-Wellness-Tips">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Finance Tips</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/budgeting.png" alt="">
+                            <p>Budgeting<br> <span></span></p>
+                        </div>
+                        <div class="resources">
+                                <a href="#"><img src="images/youtube.png" alt=""></a>
+                                <a href="#"><img src="images/blog.png" alt=""></a>
+                        </div>
+
+                        <div class="financebox financebox2" id="tax">
+                            <img src="images/tax-savings.png" alt="">
+                            <p>Tax-Saving<br> <span></span></p>
+                        </div>
+                        <div class="resources">
+                            <a href="#"><img src="images/youtube.png" alt=""></a>
+                            <a href="#"><img src="images/blog.png" alt=""></a>
+                    </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/investments.png" alt="">
+                            <p>Investments<br> <span></span></p>
+                        </div>
+                        <div class="resources">
+                            <a href="#"><img src="images/youtube.png" alt=""></a>
+                            <a href="#"><img src="images/blog.png" alt=""></a>
+                    </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Financial Literacy Webinars</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/why.png" alt="">
+                            <p>Why Attend?<br> <span></span></p>
+                        </div>
+                        <table border="1" class="finance-table finance-table2">
+                            <tr>
+                                <td>Gain financial confidence & make better money decisions</td>
+                            </tr>
+                            <tr>
+                                <td>Learn strategies to grow wealth & reduce financial stress
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Interactive Q&A with financial experts
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="financebox financebox2" id="tax">
+                            <img src="images/topics.png" alt="">
+                            <p>Key Topics<br> <span></span></p>
+                        </div>
+                        <table border="1" class="finance-table finance-table2">
+                            <tr>
+                                <td>Personal Budgeting & Expense Tracking – How to create & stick to a budget</td>
+                            </tr>
+                            <tr>
+                                <td>Savings & Investment Planning – Smart saving habits, stocks, mutual funds, and retirement plans</td>
+                            </tr>
+                            <tr>
+                                <td>Understanding Credit Scores & Loans – How credit works & ways to improve your score</td>
+                            </tr>
+                            <tr>
+                                <td>Debt Management & Repayment Strategies – Tips to pay off loans & avoid bad debt
+                                </td>
+                            </tr>
+                            
+                        </table>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/webinar.png" alt="">
+                            <p>Webinar Features<br> <span></span></p>
+                        </div>
+
+                        <table border="1" class="finance-table finance-table2">
+                            <tr>
+                                <td>Expert-led sessions & real-world case studies
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Live Q&A with financial advisors
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Free resources, calculators & templates
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Actionable strategies for immediate financial improvement
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Financial planning Tools</h6>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/exp-track.png" alt="">
+                            <p>Budgeting & Expense Tracking<br> <span></span></p>
+                        </div>
+                        <div class="toolBTNs">
+                            <a href="https://mint.intuit.com/" target="_blank">Mint</a>
+                            <a href="https://www.youneedabudget.com/" target="_blank">YNAB</a>
+                            <a href="https://pocketguard.com/" target="_blank">PocketGuard</a>
+                        </div>
+                        
+
+                        <div class="financebox financebox2" id="tax">
+                            <img src="images/InvestmentPlanning.png" alt="">
+                            <p>Savings & Investment Planning<br> <span></span></p>
+                        </div>
+                        <div class="toolBTNs">
+                            <a href="https://www.personalcapital.com/" target="_blank">Personal Capital</a>
+                            <a href="https://groww.in/" target="_blank">Groww</a>
+                            <a href="https://robinhood.com/" target="_blank">Robinhood</a>
+                        </div>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/retirement.png" alt="">
+                            <p>Retirement & L-T Wealth Planning<br> <span></span></p>
+                        </div>
+                        <div class="toolBTNs">
+                            <a href="https://www.fidelity.com/" target="_blank">Fidelity</a>
+                            <a href="https://epfo.gov.in/" target="_blank">EPFO Portal (India)</a>
+                            <a href="https://www.nps.gov.in/" target="_blank">NPS (National Pension System)</a>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="finance-Cost-Calculator">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>City-to-City Cost Comparison</h6>
+                        <div class="financebox" id="tax">
+                            <img src="images/compare.png" alt="">
+                            <p>Rental, Fuel, Cabs, etc.<br> <span></span></p>
+                        </div>
+                        
+                        <div class="expenseBOX">
+                            <label >City 1<input type="text" placeholder="Enter Amount">
+                            </label>
+                            <label >City 2<input type="text" placeholder="Enter Amount">
+                            </label>
+                            <button>Compare</button>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Expense Calculator</h6>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ec1.png" alt="">
+                            <p>Fixed Expenses<br> <span></span></p>
+                        </div>
+                        <div class="expenseBOX">
+                            <label >Expenses Name<input type="text" placeholder="Enter Amount">
+                            </label>
+                            <label >Add Coast<input type="text" placeholder="Enter Amount">
+                                
+                            </label>
+                            <button>Add</button>
+                                <button>Final Amount</button>
+                        </div>
+                        
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <div class="finance-v-box">
+                        <h6>Expense Calculator</h6>
+                        
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ec2.png" alt="">
+                            <p>Liquide Expenses<br> <span></span></p>
+                        </div>
+                        <div class="expenseBOX">
+                            <label >Expenses Name<input type="text" placeholder="Enter Amount">
+                            </label>
+                            <label >Add Coast<input type="text" placeholder="Enter Amount">
+                                
+                            </label>
+                            <button>Add</button>
+                                <button>Final Amount</button>
+                        </div>
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        let salaryBTN = document.querySelector('#salary')
+        let bonusBTN = document.querySelector('#bonus')
+        let expenseBTN = document.querySelector('#expense')
+        let taxBTN = document.querySelector('#tax')
+        let debtBTN = document.querySelector('#debt')
+        let WellnessBTN = document.querySelector('#Wellness')
+        let CalculatorBTN = document.querySelector('#Calculator')
+        let Allfinancebox = document.querySelectorAll('.financebox')
+
+        
+
+        let financeSalary = document.querySelector('#finance-Salary')
+        let financeBonuses = document.querySelector('#finance-Bonuses')
+        let financeReimbursements = document.querySelector('#finance-Reimbursements')
+        let financeTax = document.querySelector('#finance-Tax')
+        let financeDebtLoanTracker = document.querySelector('#financeDebtLoanTracker')
+        let financeFinancialWellnessTips = document.querySelector('#finance-Financial-Wellness-Tips')
+        let financeCostCalculator = document.querySelector('#finance-Cost-Calculator')
+        
+        
+        salaryBTN.addEventListener('click',function(){
+            financeBonuses.style.display = 'none'
+            financeReimbursements.style.display = 'none'
+            financeTax.style.display = 'none'
+            financeDebtLoanTracker.style.display = 'none'
+            financeFinancialWellnessTips.style.display = 'none'
+            financeCostCalculator.style.display = 'none'
+
+            financeSalary.style.display = 'block'
+            
+            Allfinancebox.forEach(function(item){
+                item.classList.remove('financeBoxActive')
+            })
+            this.classList.add('financeBoxActive')
+        })
+
+        bonusBTN.addEventListener('click',function(){
+            financeReimbursements.style.display = 'none'
+            financeTax.style.display = 'none'
+            financeSalary.style.display = 'none'
+            financeDebtLoanTracker.style.display = 'none'
+            financeFinancialWellnessTips.style.display = 'none'
+            financeCostCalculator.style.display = 'none'
+
+            financeBonuses.style.display = 'block'
+            
+            Allfinancebox.forEach(function(item){
+                item.classList.remove('financeBoxActive')
+            })
+            this.classList.add('financeBoxActive')
+        })
+
+        expenseBTN.addEventListener('click',function(){
+            financeTax.style.display = 'none'
+            financeSalary.style.display = 'none'
+            financeBonuses.style.display = 'none'
+            financeDebtLoanTracker.style.display = 'none'
+            financeFinancialWellnessTips.style.display = 'none'
+            financeCostCalculator.style.display = 'none'
+
+            financeReimbursements.style.display = 'block'
+            
+            Allfinancebox.forEach(function(item){
+                item.classList.remove('financeBoxActive')
+            })
+            this.classList.add('financeBoxActive')
+        })
+
+        taxBTN.addEventListener('click',function(){
+            financeSalary.style.display = 'none'
+            financeBonuses.style.display = 'none'
+            financeReimbursements.style.display = 'none'
+            financeDebtLoanTracker.style.display = 'none'
+            financeFinancialWellnessTips.style.display = 'none'
+            financeCostCalculator.style.display = 'none'
+
+            financeTax.style.display = 'block'
+            
+            Allfinancebox.forEach(function(item){
+                item.classList.remove('financeBoxActive')
+            })
+            this.classList.add('financeBoxActive')
+        })
+
+        debtBTN.addEventListener('click',function(){
+            financeSalary.style.display = 'none'
+            financeBonuses.style.display = 'none'
+            financeReimbursements.style.display = 'none'
+            financeTax.style.display = 'none'
+            financeCostCalculator.style.display = 'none'
+            financeFinancialWellnessTips.style.display = 'none'
+            financeDebtLoanTracker.style.display = 'block'
+            
+            Allfinancebox.forEach(function(item){
+                item.classList.remove('financeBoxActive')
+            })
+            this.classList.add('financeBoxActive')
+
+        })
+
+        WellnessBTN.addEventListener('click',function(){
+            financeSalary.style.display = 'none'
+            financeBonuses.style.display = 'none'
+            financeReimbursements.style.display = 'none'
+            financeTax.style.display = 'none'
+            financeDebtLoanTracker.style.display = 'none'
+            financeCostCalculator.style.display = 'none'
+            financeFinancialWellnessTips.style.display = 'block'
+            
+            Allfinancebox.forEach(function(item){
+                item.classList.remove('financeBoxActive')
+            })
+            this.classList.add('financeBoxActive')
+
+        })
+
+        CalculatorBTN.addEventListener('click',function(){
+            financeSalary.style.display = 'none'
+            financeBonuses.style.display = 'none'
+            financeReimbursements.style.display = 'none'
+            financeTax.style.display = 'none'
+            financeDebtLoanTracker.style.display = 'none'
+            financeFinancialWellnessTips.style.display = 'none'
+            financeCostCalculator.style.display = 'block'
+
+            Allfinancebox.forEach(function(item){
+                item.classList.remove('financeBoxActive')
+            })
+            this.classList.add('financeBoxActive')
+
+        })
+
+        let plusBTN = document.querySelector('#plusBTN')
+        let minusBTN = document.querySelector('#minusBTN')
+        let plusDocs = document.querySelector('#plusDocs')
+
+        plusBTN.addEventListener('click',function(){
+            plusDocs.innerHTML += `
+            <label>What type of document it is?<input type="text" id="claimDocumentType" placeholder="Enter type of document" required></label>
+            
+            <label class="claimUpload"><input type="file" id="claimDocument" placeholder="" required></label>
+            `
+        })
+
+
+
+
+
+        // Header JS
+        let profileBtnName = document.querySelector('#profile-btn-name').innerHTML = employeeLogin.name;
+        let profileBtnImg = document.querySelector('#profile-btn-img').src = employeeLogin.image;
+
+        function logOut(){
+            localStorage.removeItem('employeeLogin');
+            window.location.href = 'emp-index.html';
+        }
+        
+</script>
+</body>
+</html>
+

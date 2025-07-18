@@ -1,0 +1,152 @@
+[
+    {
+        "ticketCreatedBy": "E1001",
+        "ticketID": "HR-101",
+        "ticketSubject": "Incorrect Salary Credited",
+        "ticketDescription": "My salary for this month is incorrect. There seems to be a deduction that I do not recognize. Please assist.",
+        "ticketStatus": "Open",
+        "ticketCreatedOn": "2024-01-01",
+        "ticketUpdatedOn": "2024-01-01",
+        "ticketClosedOn": ""
+    },
+    {
+        "ticketCreatedBy": "E1002",
+        "ticketID": "HR-102",
+        "ticketSubject": "Leave Balance Discrepancy",
+        "ticketDescription": "My leave balance is showing incorrect values in the system. I had 5 remaining leaves, but now it's showing only 2.",
+        "ticketStatus": "Open",
+        "ticketCreatedOn": "2024-01-02",
+        "ticketUpdatedOn": "2024-01-02",
+        "ticketClosedOn": ""
+    },
+    {
+        "ticketCreatedBy": "E1003",
+        "ticketID": "HR-103",
+        "ticketSubject": "Medical Insurance Card Not Received",
+        "ticketDescription": "I applied for my medical insurance card two months ago, but I have not received it yet. Please provide an update.",
+        "ticketStatus": "Open",
+        "ticketCreatedOn": "2024-01-03",
+        "ticketUpdatedOn": "2024-01-03",
+        "ticketClosedOn": ""
+    },
+    {
+        "ticketCreatedBy": "E1004",
+        "ticketID": "HR-104",
+        "ticketSubject": "Payslip Not Accessible",
+        "ticketDescription": "I am unable to download my latest payslip from the employee portal. The page shows an error.",
+        "ticketStatus": "Open",
+        "ticketCreatedOn": "2024-01-04",
+        "ticketUpdatedOn": "2024-01-04",
+        "ticketClosedOn": ""
+    },
+    {
+        "ticketCreatedBy": "E1005",
+        "ticketID": "HR-105",
+        "ticketSubject": "Employee ID Card Lost",
+        "ticketDescription": "I lost my company ID card and need a replacement. Please guide me through the reissuance process.",
+        "ticketStatus": "Open",
+        "ticketCreatedOn": "2024-01-05",
+        "ticketUpdatedOn": "2024-01-05",
+        "ticketClosedOn": ""
+    },
+    {
+        "ticketCreatedBy": "E1006",
+        "ticketID": "HR-106",
+        "ticketSubject": "System Login Issue",
+        "ticketDescription": "I'm unable to log into the HR portal. It keeps saying my credentials are incorrect even after resetting my password.",
+        "ticketStatus": "Open",
+        "ticketCreatedOn": "2024-01-06",
+        "ticketUpdatedOn": "2024-01-06",
+        "ticketClosedOn": ""
+    },
+    {
+        "ticketCreatedBy": "E1007",
+        "ticketID": "HR-107",
+        "ticketSubject": "Bank Account Update Request",
+        "ticketDescription": "I have changed my bank account. Please update my salary payment details accordingly.",
+        "ticketStatus": "Open",
+        "ticketCreatedOn": "2024-01-07",
+        "ticketUpdatedOn": "2024-01-07",
+        "ticketClosedOn": ""
+    },
+    {
+        "ticketCreatedBy": "E1008",
+        "ticketID": "HR-108",
+        "ticketSubject": "Work From Home Approval",
+        "ticketDescription": "I have requested WFH for next week, but it is still pending approval. Can you please check?",
+        "ticketStatus": "Pending",
+        "ticketCreatedOn": "2024-01-08",
+        "ticketUpdatedOn": "2024-01-08",
+        "ticketClosedOn": ""
+    },
+    {
+        "ticketCreatedBy": "E1009",
+        "ticketID": "HR-109",
+        "ticketSubject": "Tax Deduction Issue",
+        "ticketDescription": "There is an unexpected tax deduction in my salary slip. Could you please clarify?",
+        "ticketStatus": "Open",
+        "ticketCreatedOn": "2024-01-09",
+        "ticketUpdatedOn": "2024-01-09",
+        "ticketClosedOn": ""
+    },
+    {
+        "ticketCreatedBy": "E1010",
+        "ticketID": "HR-110",
+        "ticketSubject": "Promotion Status Inquiry",
+        "ticketDescription": "I was informed about a promotion last month, but I have not received any official confirmation yet.",
+        "ticketStatus": "Open",
+        "ticketCreatedOn": "2024-01-10",
+        "ticketUpdatedOn": "2024-01-10",
+        "ticketClosedOn": ""
+    },
+    {
+        "ticketCreatedBy": "E1011",
+        "ticketID": "HR-111",
+        "ticketSubject": "Training Session Registration",
+        "ticketDescription": "I want to register for the upcoming leadership training session. Please assist.",
+        "ticketStatus": "Open",
+        "ticketCreatedOn": "2024-01-11",
+        "ticketUpdatedOn": "2024-01-11",
+        "ticketClosedOn": ""
+    },
+    {
+        "ticketCreatedBy": "E1012",
+        "ticketID": "HR-112",
+        "ticketSubject": "Emergency Contact Update",
+        "ticketDescription": "I need to update my emergency contact details in the system.",
+        "ticketStatus": "Open",
+        "ticketCreatedOn": "2024-01-12",
+        "ticketUpdatedOn": "2024-01-12",
+        "ticketClosedOn": ""
+    },
+    {
+        "ticketCreatedBy": "E1013",
+        "ticketID": "HR-113",
+        "ticketSubject": "Office Laptop Issue",
+        "ticketDescription": "My office laptop is not functioning properly. Can I get a replacement or repair service?",
+        "ticketStatus": "Open",
+        "ticketCreatedOn": "2024-01-13",
+        "ticketUpdatedOn": "2024-01-13",
+        "ticketClosedOn": ""
+    },
+    {
+        "ticketCreatedBy": "E1014",
+        "ticketID": "HR-114",
+        "ticketSubject": "Work Visa Extension",
+        "ticketDescription": "My work visa is about to expire soon. Can HR provide guidance on the renewal process?",
+        "ticketStatus": "Open",
+        "ticketCreatedOn": "2024-01-14",
+        "ticketUpdatedOn": "2024-01-14",
+        "ticketClosedOn": ""
+    },
+    {
+        "ticketCreatedBy": "E1015",
+        "ticketID": "HR-115",
+        "ticketSubject": "Travel Reimbursement Delay",
+        "ticketDescription": "I submitted my travel reimbursement request last month, but I have not received the amount yet.",
+        "ticketStatus": "Pending",
+        "ticketCreatedOn": "2024-01-15",
+        "ticketUpdatedOn": "2024-01-15",
+        "ticketClosedOn": ""
+    }
+]

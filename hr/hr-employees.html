@@ -1,0 +1,387 @@
+<script>
+    if (localStorage.getItem('hrLogin') == undefined || localStorage.getItem('hrLogin') == null) {
+        window.location.href = 'hr-index.html';
+    }
+
+    const hrLogin = JSON.parse(localStorage.getItem('hrLogin'));
+    // console.log(hrLogin);
+    console.log(hrLogin);
+
+</script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>All Employees</title>
+
+    <style>
+        .emp-details p span:last-child {
+            margin-left: 0px;
+            font-size: 16px;
+            color: #000;
+        }
+        #emp-dashboard {
+    padding-top: 0;
+}
+#HR-dashboard-search{
+    padding-bottom: 20px;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 logo-v-center">
+                    <div class="logo">
+                        HR <span>Dash</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 nav-V-center">
+                    <div class="top-nav">
+                        <ul>
+                            <li class="nav-item"><a href="hr-dashboard.html">Home</a></li>
+                            <li class="nav-item"><a href="hr-profile.html">Profile</a></li>
+                            <li class="nav-item"><a href="hr-employees.html">Employees</a></li>
+                            <!-- <li class="nav-item"><a href="hr-finance.html">Finance</a></li>
+                            <li class="nav-item"><a href="hr-leaves.html">Leaves</a></li>
+                            <li class="nav-item"><a href="hr-guidelines.html">Guidelines</a></li>
+                            <li class="nav-item"><a href="hr-support.html">Support</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="profile-btn">
+                        <div class="dropdown">
+
+                            <a class="btn btn-secondary dropdown-toggle" id="drp-btn" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span id="profile-btn-name"></span>
+                                <span id="profile-btn-img-span"><img id="profile-btn-img" src="" alt=""></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item disabled" href="#">Profile</a></li>
+                                <!-- <li><a class="dropdown-item" href="#">Change Password</a></li> -->
+                                <li><button class="dropdown-item" id="logOut" onclick="logOut()">Log Out</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <!-- SEARCH FILTER FOR HR - EMPLOYEE LIST - PENDING
+    <section id="HR-dashboard-search" class="sec1">
+        <div class="container ">
+            <div class="row">
+                <div class="col-lg-12 V-center profile-container3">
+                    
+                    
+                    <div class="col-lg-4">
+                        <div class="SearchContainer">
+                            <input id="searchInput" type="text" placeholder="Search Employee" onkeyup="searchFunction()">
+                            <button id="searchBTN"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 offset-lg-5">
+                        <div class="filterContainer">
+                            <select name="" id="">
+                                <option value="">All</option>
+                                <option value="">Active</option>
+                                <option value="">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+    <section id="emp-dashboard"  class="sec1">
+        <div class="container ">
+            <div class="row">
+
+                <div class="col-lg-12 V-center">
+
+                    <div class="row" id="hr-employee-container">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="../js/profile.js"></script>
+    <script>
+
+
+        // Navigation Bar - NAME AND IMAGE
+        let profileBtnName = document.querySelector('#profile-btn-name')
+        let profileBtnImg = document.querySelector('#profile-btn-img').src = hrLogin.image;
+        profileBtnName.innerHTML = hrLogin.name;
+
+
+        // Logout
+        function logOut() {
+            localStorage.removeItem('hrLogin');
+            window.location.href = 'hr-index.html';
+        }
+
+
+        // Employee Details
+        // const AllEmployees = nill
+        fetch('../JSON/employee.json').then(response => response.json()).then((data) => {
+            const AllEmployees = data;
+
+            let HRemployeeContainer = document.querySelector('#hr-employee-container')
+            HRemployeeContainer.innerHTML = '';
+
+            AllEmployees.forEach(function (employee) {
+                HRemployeeContainer.innerHTML += `<div class="col-lg-12 V-center profile-container3" data-name="${employee.name}">
+                            
+                            <div class="col-lg-3 hr-emp-box">
+                                <div class="emp-profileImage">
+                                    <img id="emp-profileImage" src="${employee.image}" alt="">
+                                </div>
+                                <div class="hr-emp-details">
+                                    <h2 class="heading1" id="names">${employee.name}</h2>
+                                </div>
+                            </div>
+                            
+
+                            <div class="col-lg-3 hr-emp-box">
+                                <div id="financeoptions">
+                                    <div class="financebox scaleHVR" id="bonus">
+                                        <img src="images/old/name-card.png" alt="">
+                                        <h5>Details</h5>
+                                    </div>
+                                </div>
+
+                                <div class="hr-emp-details2">
+                                    <p><strong>Email: </strong><span id="email">${employee.email}</span></p>
+                                    <p><strong>Contact Number: </strong><span id="phone">${employee.phone}</span></p>
+                                    <p><strong>Employee ID: </strong><span id="empID">${employee.username}</span></p>
+                                    <p><strong>Designation: </strong><span id="designation">${employee.designation}</span></p>
+                                    <p><strong>Department: </strong><span id="department">${employee.department}</span></p>
+                                    <p><strong>Reporting Manager: </strong><span id="reportingManager">${employee.reportingManager}</span></p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-lg-3 hr-emp-box">
+                                <div id="financeoptions">
+                                    <div class="financebox scaleHVR" id="bonus">
+                                        <img src="images/old/performance2.png" alt="">
+                                        <h5>Performance</h5>
+                                    </div>
+                                </div>
+
+                                <div class="hr-emp-details2">
+                                    <p><strong>Mid Year Review: </strong><span id="MidYearReview">${employee.MidYearReview}</span></p>
+                                    <p><strong>Annual Review: </strong><span id="AnnualReview">${employee.AnnualReview}</span></p>
+                                </div>
+
+                                <div id="financeoptions">
+                                    <div class="financebox scaleHVR" id="bonus">
+                                        <img src="images/old/financial-profit.png" alt="">
+                                        <h5>Finance</h5>
+                                    </div>
+                                </div>
+
+                                <div class="hr-emp-details2">
+                                    <h1 class="heading1" id="names"></h1>
+                                    <p><strong>Monthly Salary: </strong><span id="MonthlySalary">${employee.MonthlySalary}</span></p>
+                                    <p><strong>Annual CTC: </strong><span id="AnnualCTC">${employee.AnnualCTC}<br> (includes all deductions)</span></p>
+                                </div>
+                            </div>
+
+
+
+                           <div class="col-lg-3 hr-emp-box">
+                                <div id="financeoptions">
+                                    <div class="financebox scaleHVR" id="bonus">
+                                        <img src="images/old/leave-1.png" alt="">
+                                        <h5>Other Details</h5>
+                                    </div>
+                                </div>
+
+                                <div class="hr-emp-details2">
+                                    <h1 class="heading1" id="names"></h1>
+                                    <p><strong>BOND: </strong><span id="MidYearReview">${employee.Bond}</span></p>
+                                    <p class="leave-table"><strong>Leave Balance: </strong><span id="AnnualReview">
+                                        <table border="1" class="finance-table">
+                                            <tr>
+                                                <td>Paid Leave:</td>
+                                                <td class="">6 Days</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Unpaid Leave:</td>
+                                                <td class="">Unlimited</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sick Leave:</td>
+                                                <td class="">12 Days</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Comp Offs:</td>
+                                                <td class="">2 Days</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Work From Home:</td>
+                                                <td class="">8 Days</td>
+                                            </tr>
+                                           
+                                        </table>
+                                    </span></p>
+                                    
+                                </div>
+                            </div> 
+
+
+                        </div>
+                `
+            })
+
+
+        //     function searchFunction(){
+        //     console.log('searchFunction');
+
+        //     let searchQuery = document.querySelector('#searchInput').value.toLowerCase();
+        //     let filteredEmployees = AllEmployees.filter(function(employee){
+        //         return employee.name.toLowerCase().includes(searchQuery);
+        //     })
+        // }
+
+
+
+
+        function searchFunction() {
+    console.log('searchFunction');
+    
+    let searchQuery = document.querySelector('#searchInput').value.toLowerCase();
+    let filteredEmployees = AllEmployees.filter(function(employee) {
+        return employee.name.toLowerCase().includes(searchQuery);
+    });
+    
+
+
+    // Update the UI with filtered results
+    let HRemployeeContainer = document.querySelector('#hr-employee-container');
+    HRemployeeContainer.innerHTML = '';
+
+    filteredEmployees.forEach(function(employee) {
+        HRemployeeContainer.innerHTML += `
+            <div class="col-lg-12 V-center profile-container3" >
+                <div class="col-lg-3 hr-emp-box">
+                    <div class="emp-profileImage">
+                        <img id="emp-profileImage" src="${employee.image}" alt="">
+                    </div>
+                    <div class="hr-emp-details">
+                        <h2 class="heading1" id="names">${employee.name}</h2>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 hr-emp-box">
+                    <div id="financeoptions">
+                        <div class="financebox scaleHVR" id="bonus">
+                            <img src="images/old/name-card.png" alt="">
+                            <h5>Details</h5>
+                        </div>
+                    </div>
+                    <div class="hr-emp-details2">
+                        <p><strong>Email: </strong><span id="email">${employee.email}</span></p>
+                        <p><strong>Contact Number: </strong><span id="phone">${employee.phone}</span></p>
+                        <p><strong>Employee ID: </strong><span id="empID">${employee.username}</span></p>
+                        <p><strong>Designation: </strong><span id="designation">${employee.designation}</span></p>
+                        <p><strong>Department: </strong><span id="department">${employee.department}</span></p>
+                        <p><strong>Reporting Manager: </strong><span id="reportingManager">${employee.reportingManager}</span></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 hr-emp-box">
+                    <div id="financeoptions">
+                        <div class="financebox scaleHVR" id="bonus">
+                            <img src="images/old/performance2.png" alt="">
+                            <h5>Performance</h5>
+                        </div>
+                    </div>
+                    <div class="hr-emp-details2">
+                        <p><strong>Mid Year Review: </strong><span id="MidYearReview">${employee.MidYearReview}</span></p>
+                        <p><strong>Annual Review: </strong><span id="AnnualReview">${employee.AnnualReview}</span></p>
+                    </div>
+                    <div id="financeoptions">
+                        <div class="financebox scaleHVR" id="bonus">
+                            <img src="images/old/financial-profit.png" alt="">
+                            <h5>Finance</h5>
+                        </div>
+                    </div>
+                    <div class="hr-emp-details2">
+                        <h1 class="heading1" id="names"></h1>
+                        <p><strong>Monthly Salary: </strong><span id="MonthlySalary">${employee.MonthlySalary}</span></p>
+                        <p><strong>Annual CTC: </strong><span id="AnnualCTC">${employee.AnnualCTC}<br> (includes all deductions)</span></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 hr-emp-box">
+                    <div id="financeoptions">
+                        <div class="financebox scaleHVR" id="bonus">
+                            <img src="images/old/leave-1.png" alt="">
+                            <h5>Other Details</h5>
+                        </div>
+                    </div>
+                    <div class="hr-emp-details2">
+                        <h1 class="heading1" id="names"></h1>
+                        <p><strong>BOND: </strong><span id="MidYearReview">${employee.Bond}</span></p>
+                        <p class="leave-table"><strong>Leave Balance: </strong><span id="AnnualReview">
+                            <table border="1" class="finance-table">
+                                <tr><td>Paid Leave:</td><td class="">6 Days</td></tr>
+                                <tr><td>Unpaid Leave:</td><td class="">Unlimited</td></tr>
+                                <tr><td>Sick Leave:</td><td class="">12 Days</td></tr>
+                                <tr><td>Comp Offs:</td><td class="">2 Days</td></tr>
+                                <tr><td>Work From Home:</td><td class="">8 Days</td></tr>
+                            </table>
+                        </span></p>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+}
+
+
+
+        })
+
+
+
+        
+    </script>
+</body>
+
+</html>

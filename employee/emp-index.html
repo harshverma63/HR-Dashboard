@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Employe Log In</title>
+</head>
+
+<body class="index-body">
+    
+    <section id="login">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-4 VH-center">
+                    <div class="backBUT">
+                        <button class="btn1" onclick="backSelection()"><i class="fa-solid fa-arrow-left"></i></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-4 VH-center">
+                    
+                    <div class="selectionButtons loginForm-container">
+                        
+                        <form action="" id="loginForm">
+                            <label>Employee User Name
+                                <input type="text" id="loginUsername" class="loginField" required>
+                            </label>
+
+                            <label>Password
+                                <input type="password" id="loginPassword" class="loginField" required>
+                            </label>
+                            <button class="btn1">Login</button>
+                        </form>
+
+                        <div class="additional-buts">
+                            <button class="btn1" onclick="forgetPassword()">Other Login Ways</button>
+                            <!-- <button class="btn1" onclick="HRLogin()">HR Login</button> -->
+                        </div>
+
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- <script src="../js/profile.js" defer></script> -->
+
+    <script>
+        let loginForm = document.getElementById('loginForm');
+
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let loginUsername = document.getElementById('loginUsername')
+            let loginPassword = document.getElementById('loginPassword')
+
+            let found = false;
+
+            fetch('../JSON/employee.json').then(response => response.json()).then((data) => {
+                const employees = data;
+                // console.log(employees);
+                employees.find((employee) => {
+                    if (employee.username == loginUsername.value && employee.password == loginPassword.value) {
+                        localStorage.setItem('employeeLogin', JSON.stringify(employee));
+                        window.location.href = 'emp-dashboard.html';
+                        found = true
+                        return
+                    }
+
+
+                })
+                if (!found) {
+                    alert('Invalid Username or Password');
+                }
+            })
+        });
+
+
+        function forgetPassword() {
+            window.location.href = 'emp-forgetpassword.html';
+        }
+
+        function backSelection(){
+            window.location.href = '../index.html'
+        }
+    </script>
+
+</body>
+
+</html>

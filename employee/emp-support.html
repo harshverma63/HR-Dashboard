@@ -1,0 +1,501 @@
+<script>
+    if(localStorage.getItem('employeeLogin')== undefined || localStorage.getItem('employeeLogin')== null){
+        window.location.href = 'emp-index.html';
+    }
+
+    const employeeLogin = JSON.parse(localStorage.getItem('employeeLogin'));
+    // console.log(employeeLogin);
+    console.log(employeeLogin.name);
+
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Support</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 logo-v-center">
+                    <div class="logo">
+                        EMP <span>Dash</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 nav-V-center">
+                    <div class="top-nav">
+                        <ul>
+                            <li class="nav-item"><a href="emp-dashboard.html">Home</a></li>
+                            <!-- <li class="nav-item"><a href="emp-profile.html">Profile</a></li> -->
+                            <li class="nav-item"><a href="emp-finance.html">Finance</a></li>
+                            <li class="nav-item"><a href="emp-leaves.html">Leaves</a></li>
+                            <li class="nav-item"><a href="emp-a&a.html">Achievements & Awards</a></li>
+                            <li class="nav-item"><a href="emp-support.html">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="profile-btn">
+                        <div class="dropdown">
+
+                            <a class="btn btn-secondary dropdown-toggle" id="drp-btn"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <span id="profile-btn-name"></span>
+                              <span id="profile-btn-img-span"><img id="profile-btn-img" src="" alt=""></span>
+                            </a>
+                          
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item " href="emp-profile.html">Profile</a></li>
+                              <!-- <li><a class="dropdown-item" href="#">Change Password</a></li> -->
+                              <li><button class="dropdown-item" id="logOut" onclick="logOut()">Log Out</button></li>
+                            </ul>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="emp-support" class="sec1">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="financeoptions">
+                        
+                        <div class="financebox scaleHVR financeBoxActive" id="salary">
+                            <img src="images/hrticket.png" alt="">
+                            <h5>New HR Ticket</h5>
+                        </div>
+
+                        <div class="financebox scaleHVR" id="bonus">
+                            <img src="images/ptickets.png" alt="">
+                            <h5>Pending Tickets</h5>
+                        </div>
+
+                        <div class="financebox scaleHVR" id="expense">
+                            <img src="images/resolved.png" alt="">
+                            <h5>Resolved Tickets</h5>
+                        </div>
+
+                        <div class="financebox scaleHVR" id="tax">
+                            <img src="images/escalation.png" alt="">
+                            <h5>Escalate Ticket</h5>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="finance-Salary2">
+        <div class="container ">
+            <div class="row">
+
+                <div class="col-lg-6 offset-lg-3  box-container">
+                    <div class="finance-v-box">
+                        
+                        <div class="hrTicket-container">
+                            <form id="HrTicketForm">
+                                <label>Add Ticket Subject
+                                    <input type="text" name="hrTicket" id="hrTicketSubject">
+                                </label>
+                                <label>Add Ticket Description
+                                    <textarea name="hrTicket" id="hrTicketDescription"></textarea>
+                                </label>
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="finance-Bonuses" class="support-pending">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <h6 class="head6">Last Three Tickets</h6>
+
+                    <div class="finance-v-box" id="tickets">
+                        
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <h6 class="head6">Past 6 Months</h6>
+
+                    <div class="finance-v-box" id="tickets6months">
+                        
+                       
+                    </div>
+                </div> 
+                
+                <div class="col-lg-4 P-RL-15">
+                    <h6 class="head6">All Tickets</h6>
+
+                    <div class="finance-v-box" id="AllTickets">
+                        
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="finance-Reimbursements"  class="support-pending">
+        <div class="container box-container">
+            <div class="row">
+
+                <div class="col-lg-4 P-RL-15">
+                    <h6 class="head6">Resolved 2025</h6>
+
+                    <div class="finance-v-box">
+                        
+                        <div class="financebox m-t-0" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket One...<br> <span></span></p>
+                        </div>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Two...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Three...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Four...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Five...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Six...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Seven...<br> <span></span></p>
+                        </div>
+                
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Eight...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Nine...<br> <span></span></p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <h6 class="head6">Resolved 2024</h6>
+                    <div class="finance-v-box">
+                        
+                        <div class="financebox m-t-0" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket One...<br> <span></span></p>
+                        </div>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Two...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Three...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Four...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Five...<br> <span></span></p>
+                    </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Six...<br> <span></span></p>
+                </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 P-RL-15">
+                    <h6 class="head6">Resolved 2023</h6>
+                    <div class="finance-v-box">
+                        
+                        <div class="financebox m-t-0" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket One...<br> <span></span></p>
+                        </div>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Two...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Three...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Four...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Five...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Six...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Seven...<br> <span></span></p>
+                        </div>
+                        
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Eight...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Nine...<br> <span></span></p>
+                        </div>
+
+                        <div class="financebox" id="tax">
+                            <img src="images/ticket.png" alt="">
+                            <p class="ticketSubject">Ticket Ten...<br> <span></span></p>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="finance-Tax">
+        <div class="container ">
+            <div class="row">
+
+                <div class="col-lg-6 offset-lg-3  box-container">
+                    <div class="finance-v-box">
+                        
+                        <div class="hrTicket-container">
+                            <form id="HrTicketForm">
+                                <label>Ticket ID
+                                    <input type="text" name="hrTicket" id="hrTicketTicketID">
+                                </label>
+                                <label>Approver Employee ID 
+                                    <input type="text" name="hrTicket" id="hrTicketApprover">
+                                </label>
+                                <label>Add Description
+                                    <textarea name="hrTicket" id="hrTicketDescription"></textarea>
+                                </label>
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        let salaryBTN = document.querySelector('#salary')
+        let bonusBTN = document.querySelector('#bonus')
+        let expenseBTN = document.querySelector('#expense')
+        let taxBTN = document.querySelector('#tax')
+        let debtBTN = document.querySelector('#debt')
+        let WellnessBTN = document.querySelector('#Wellness')
+        let CalculatorBTN = document.querySelector('#Calculator')
+        let Allfinancebox = document.querySelectorAll('.financebox')
+        
+
+        let financeSalary = document.querySelector('#finance-Salary2')
+        let financeBonuses = document.querySelector('#finance-Bonuses')
+        let financeReimbursements = document.querySelector('#finance-Reimbursements')
+        let financeTax = document.querySelector('#finance-Tax')
+        let financeDebtLoanTracker = document.querySelector('#financeDebtLoanTracker')
+        let financeFinancialWellnessTips = document.querySelector('#finance-Financial-Wellness-Tips')
+        let financeCostCalculator = document.querySelector('#finance-Cost-Calculator')
+        
+        
+        salaryBTN.addEventListener('click',function(){
+            financeBonuses.style.display = 'none'
+            financeReimbursements.style.display = 'none'
+            financeTax.style.display = 'none'
+            financeSalary.style.display = 'block'
+
+            Allfinancebox.forEach(function(item){
+                item.classList.remove('financeBoxActive')
+            })
+            this.classList.add('financeBoxActive')
+        })
+
+        bonusBTN.addEventListener('click',function(){
+            financeReimbursements.style.display = 'none'
+            financeTax.style.display = 'none'
+            financeSalary.style.display = 'none'
+            financeBonuses.style.display = 'block'
+            
+            Allfinancebox.forEach(function(item){
+                item.classList.remove('financeBoxActive')
+            })
+            this.classList.add('financeBoxActive')
+
+        })
+
+        expenseBTN.addEventListener('click',function(){
+            financeTax.style.display = 'none'
+            financeSalary.style.display = 'none'
+            financeBonuses.style.display = 'none'
+            financeReimbursements.style.display = 'block'
+            
+            Allfinancebox.forEach(function(item){
+                item.classList.remove('financeBoxActive')
+            })
+            this.classList.add('financeBoxActive')
+
+        })
+
+        taxBTN.addEventListener('click',function(){
+            financeSalary.style.display = 'none'
+            financeBonuses.style.display = 'none'
+            financeReimbursements.style.display = 'none'
+            financeTax.style.display = 'block'
+            
+            Allfinancebox.forEach(function(item){
+                item.classList.remove('financeBoxActive')
+            })
+            this.classList.add('financeBoxActive')
+
+        })
+
+        
+
+
+
+        // ticket
+
+        let ticketSubject = document.querySelector('#ticketSubject')
+        let tickets6months = document.querySelector('#tickets6months')
+        let AllTickets = document.querySelector('#AllTickets')
+        
+        
+        
+        fetch('../JSON/tickets.json').then(response => response.json()).then((data) => {
+            const tickets = data.slice(-3);
+            // console.log(tickets);
+            let ticketsList =document.querySelector('#tickets')
+
+            tickets.forEach(function(ticket){
+                ticketsList.innerHTML += `
+                 <div class="financebox m-t-0 " id="ticket">
+                            <img src="images/ticket.png" alt="">
+                            <p id="ticketSubject">${ticket.ticketSubject}<br> <span></span></p>
+                        </div>
+                `
+            })
+        })
+
+
+
+
+        // Past 6 Months
+        fetch('../JSON/tickets.json').then(response => response.json()).then((data) => {
+            const tickets = data.slice(data.length - 10,data.length - 4);
+            // console.log(tickets);
+            let ticketsList = document.querySelector('#tickets')
+
+            tickets.forEach(function(ticket){
+                tickets6months.innerHTML += `
+                 <div class="financebox m-t-0 " id="ticket">
+                            <img src="images/ticket.png" alt="">
+                            <p id="ticketSubject">${ticket.ticketSubject}<br> <span></span></p>
+                        </div>
+                `
+            })
+        })
+
+
+        // All Tickets
+        fetch('../JSON/tickets.json').then(response => response.json()).then((data)=>{
+            const tickets = data;
+
+            tickets.forEach(function(ticket){
+                AllTickets.innerHTML += `
+                 <div class="financebox m-t-0 " id="ticket">
+                            <img src="images/ticket.png" alt="">
+                            <p id="ticketSubject">${ticket.ticketSubject}<br> <span></span></p>
+                        </div>
+                `
+            })
+        })
+
+
+         // Header JS
+         let profileBtnName = document.querySelector('#profile-btn-name').innerHTML = employeeLogin.name;
+        let profileBtnImg = document.querySelector('#profile-btn-img').src = employeeLogin.image;
+
+        function logOut(){
+            localStorage.removeItem('employeeLogin');
+            window.location.href = 'emp-index.html';
+        }
+        
+</script>
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+[
+    {
+        "username": "E1000",
+        "password": "admin123",
+        "image": "images/emp-images/emp-profile3.png",
+        "name": "Sarah Lee",
+        "email": "Sarah.Lee@gmail.com",
+        "phone": "+91-9876543212",
+        "designation": "CEO",
+        "department": "Operations",
+        "reportingManager": "Self"
+    },
+    {
+        "username": "EHR1001",
+        "password": "admin123",
+        "image": "images/emp-images/emp-profile.png",
+        "name": "Olivia Martinez",
+        "email": "Olivia.Martinez@gmail.com",
+        "phone": "+91-9876543210",
+        "designation": "Senior HR",
+        "department": "Human Resource",
+        "reportingManager": "John Max"
+    },
+    {
+        "username": "E1002",
+        "password": "admin123",
+        "image": "images/emp-images/emp-profile2.png",
+        "name": "John Max",
+        "email": "John.Max@gmail.com",
+        "phone": "+91-9876543211",
+        "designation": "HR Director",
+        "department": "Human Resource",
+        "reportingManager": "Sarah Lee"
+    }
+]
