@@ -140,6 +140,12 @@ section{
     justify-content: center;
     align-content: center;
 }
+#selection .VH-center{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+}
 
 #selection {
     height: 100vh;
